@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "ceconomy:raritanium_ore",
+    "ceconomy:deepslate_raritanium_ore",
+    "ceconomy:currency_network_cable",
+    "ceconomy:currency_network_cable_block",
+    "ceconomy:currency_network_gate",
+    "ceconomy:bank",
+    "ceconomy:ender_bank",
+    "ceconomy:trading_post"
+  ]
+}

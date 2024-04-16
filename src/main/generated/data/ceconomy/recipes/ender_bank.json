@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "ceconomy:currency_network_cable"
+    },
+    "E": {
+      "item": "minecraft:ender_eye"
+    },
+    "X": {
+      "item": "ceconomy:gold_coin"
+    }
+  },
+  "pattern": [
+    "CEC",
+    "EXE",
+    "CEC"
+  ],
+  "result": {
+    "item": "ceconomy:ender_bank"
+  },
+  "show_notification": true
+}

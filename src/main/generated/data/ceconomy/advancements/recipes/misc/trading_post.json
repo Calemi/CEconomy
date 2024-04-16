@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "ceconomy:trading_post"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "trading_post": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ceconomy:currency_network_cable"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "trading_post",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "ceconomy:trading_post"
+    ]
+  },
+  "sends_telemetry_event": false
+}

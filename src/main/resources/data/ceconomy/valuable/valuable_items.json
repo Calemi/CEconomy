@@ -1,0 +1,37 @@
+[
+  {
+	"itemKey": "ceconomy:raritanium",
+	"value": 1,
+	"walletOutput": false
+  },
+  {
+	"itemKey": "ceconomy:copper_coin",
+	"value": 1,
+	"walletOutput": true
+  },
+  {
+	"itemKey": "ceconomy:silver_coin",
+	"value": 10,
+	"walletOutput": true
+  },
+  {
+	"itemKey": "ceconomy:gold_coin",
+	"value": 100,
+	"walletOutput": true
+  },
+  {
+	"itemKey": "ceconomy:platinum_coin",
+	"value": 1000,
+	"walletOutput": true
+  },
+  {
+	"itemKey": "ceconomy:diamond_coin",
+	"value": 10000,
+	"walletOutput": true
+  },
+  {
+	"itemKey": "ceconomy:netherite_coin",
+	"value": 100000,
+	"walletOutput": true
+  }
+]

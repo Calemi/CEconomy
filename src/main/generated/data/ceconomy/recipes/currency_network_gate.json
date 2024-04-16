@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "ceconomy:currency_network_cable"
+    },
+    "I": {
+      "tag": "c:iron_ingots"
+    },
+    "X": {
+      "tag": "c:redstone_dusts"
+    }
+  },
+  "pattern": [
+    "CIC",
+    "IXI",
+    "CIC"
+  ],
+  "result": {
+    "item": "ceconomy:currency_network_gate"
+  },
+  "show_notification": true
+}

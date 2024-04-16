@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "ceconomy:currency_network_cable"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "wallet": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ceconomy:copper_coin"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "wallet",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "ceconomy:currency_network_cable"
+    ]
+  },
+  "sends_telemetry_event": false
+}

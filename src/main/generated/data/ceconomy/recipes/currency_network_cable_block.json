@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "ceconomy:currency_network_cable"
+    }
+  ],
+  "result": {
+    "item": "ceconomy:currency_network_cable_block"
+  }
+}

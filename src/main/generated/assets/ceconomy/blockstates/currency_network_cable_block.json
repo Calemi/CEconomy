@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "ceconomy:block/currency_network_cable_block"
+    }
+  }
+}

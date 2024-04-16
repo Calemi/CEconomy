@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "ceconomy:raritanium_ore",
+    "ceconomy:deepslate_raritanium_ore",
+    "ceconomy:copper_coin_stack",
+    "ceconomy:silver_coin_stack",
+    "ceconomy:gold_coin_stack",
+    "ceconomy:platinum_coin_stack",
+    "ceconomy:diamond_coin_stack",
+    "ceconomy:netherite_coin_stack",
+    "ceconomy:currency_network_cable",
+    "ceconomy:currency_network_cable_block",
+    "ceconomy:currency_network_gate",
+    "ceconomy:bank",
+    "ceconomy:ender_bank",
+    "ceconomy:trading_post"
+  ]
+}

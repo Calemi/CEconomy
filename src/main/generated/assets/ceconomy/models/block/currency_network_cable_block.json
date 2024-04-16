@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "ceconomy:block/currency_network_cable_block"
+  }
+}

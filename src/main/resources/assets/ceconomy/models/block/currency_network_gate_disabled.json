@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "ceconomy:block/currency_network_gate_disabled"
+  }
+}

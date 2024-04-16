@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "currency_network_cable_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ceconomy:currency_network_cable"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "ceconomy:currency_network_cable_block"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "currency_network_cable_block",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "ceconomy:currency_network_cable_block"
+    ]
+  },
+  "sends_telemetry_event": false
+}

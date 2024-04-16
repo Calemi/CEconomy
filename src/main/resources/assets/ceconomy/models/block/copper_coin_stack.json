@@ -1,0 +1,7 @@
+{
+  "parent": "ceconomy:block/coin_stack",
+  "textures": {
+    "0": "ceconomy:block/copper_coin_stack",
+    "particle": "ceconomy:block/copper_coin_stack"
+  }
+}

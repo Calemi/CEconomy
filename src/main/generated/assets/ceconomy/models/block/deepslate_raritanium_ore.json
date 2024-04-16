@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "ceconomy:block/deepslate_raritanium_ore"
+  }
+}

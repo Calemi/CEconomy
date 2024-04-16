@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "ceconomy:currency_network_cable"
+    },
+    "I": {
+      "tag": "c:iron_ingots"
+    },
+    "X": {
+      "item": "ceconomy:gold_coin"
+    }
+  },
+  "pattern": [
+    "CIC",
+    "IXI",
+    "CIC"
+  ],
+  "result": {
+    "item": "ceconomy:bank"
+  },
+  "show_notification": true
+}

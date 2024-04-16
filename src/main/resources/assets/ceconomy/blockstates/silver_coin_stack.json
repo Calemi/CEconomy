@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "": [
+      {"model": "ceconomy:block/silver_coin_stack"},
+      {"model": "ceconomy:block/silver_coin_stack", "y": 90},
+      {"model": "ceconomy:block/silver_coin_stack", "y": 180},
+      {"model": "ceconomy:block/silver_coin_stack", "y": 270}
+    ]
+  }
+}

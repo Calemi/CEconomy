@@ -1,0 +1,22 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"texture": "ceconomy:block/currency_network_cable",
+		"particle": "ceconomy:block/currency_network_cable"
+	},
+	"elements": [
+		{
+			"name": "tube connection",
+			"from": [6, 6, 0],
+			"to": [10, 10, 16],
+			"faces": {
+				"north": {"uv": [3, 0, 5, 2], "texture": "#texture"},
+				"east": {"uv": [0, 3, 2, 11], "rotation": 90, "texture": "#texture"},
+				"south": {"uv": [3, 0, 5, 2], "texture": "#texture"},
+				"west": {"uv": [0, 3, 2, 11], "rotation": 270, "texture": "#texture"},
+				"up": {"uv": [0, 3, 2, 11], "texture": "#texture"},
+				"down": {"uv": [0, 3, 2, 11], "rotation": 180, "texture": "#texture"}
+			}
+		}
+	]
+}

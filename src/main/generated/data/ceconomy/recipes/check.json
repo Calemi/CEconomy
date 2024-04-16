@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "ceconomy:copper_coin"
+    },
+    "P": {
+      "item": "minecraft:paper"
+    }
+  },
+  "pattern": [
+    "PCP"
+  ],
+  "result": {
+    "item": "ceconomy:check"
+  },
+  "show_notification": true
+}

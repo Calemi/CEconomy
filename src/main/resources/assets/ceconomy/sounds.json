@@ -1,0 +1,38 @@
+{
+  "item.coin": {
+    "category": "item",
+    "subtitle": "item.coin.sub",
+    "sounds": [
+      {
+        "name": "ceconomy:item/coin_1"
+      },
+      {
+        "name": "ceconomy:item/coin_2"
+      },
+      {
+        "name": "ceconomy:item/coin_3"
+      },
+      {
+        "name": "ceconomy:item/coin_4"
+      }
+    ]
+  },
+  "item.cheap_money_bag": {
+    "category": "item",
+    "subtitle": "item.cheap_money_bag.sub",
+    "sounds": [
+      {
+        "name": "ceconomy:item/cheap_money_bag"
+      }
+    ]
+  },
+  "item.rich_money_bag": {
+    "category": "item",
+    "subtitle": "item.rich_money_bag.sub",
+    "sounds": [
+      {
+        "name": "ceconomy:item/rich_money_bag"
+      }
+    ]
+  }
+}

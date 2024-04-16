@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "": [
+      {"model": "ceconomy:block/copper_coin_stack"},
+      {"model": "ceconomy:block/copper_coin_stack", "y": 90},
+      {"model": "ceconomy:block/copper_coin_stack", "y": 180},
+      {"model": "ceconomy:block/copper_coin_stack", "y": 270}
+    ]
+  }
+}

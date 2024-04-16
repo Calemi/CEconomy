@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "ender_bank": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ceconomy:currency_network_cable"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "ceconomy:ender_bank"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "ender_bank",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "ceconomy:ender_bank"
+    ]
+  },
+  "sends_telemetry_event": false
+}

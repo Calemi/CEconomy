@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "": [
+      {"model": "ceconomy:block/gold_coin_stack"},
+      {"model": "ceconomy:block/gold_coin_stack", "y": 90},
+      {"model": "ceconomy:block/gold_coin_stack", "y": 180},
+      {"model": "ceconomy:block/gold_coin_stack", "y": 270}
+    ]
+  }
+}

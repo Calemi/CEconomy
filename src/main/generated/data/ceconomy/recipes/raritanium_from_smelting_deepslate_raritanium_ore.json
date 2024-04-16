@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.7,
+  "group": "raritanium",
+  "ingredient": {
+    "item": "ceconomy:deepslate_raritanium_ore"
+  },
+  "result": "ceconomy:raritanium"
+}

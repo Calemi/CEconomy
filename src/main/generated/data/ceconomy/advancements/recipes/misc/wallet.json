@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "ceconomy:wallet"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "wallet": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ceconomy:copper_coin"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "wallet",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "ceconomy:wallet"
+    ]
+  },
+  "sends_telemetry_event": false
+}
