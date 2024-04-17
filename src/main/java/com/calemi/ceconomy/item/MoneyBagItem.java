@@ -40,7 +40,7 @@ public class MoneyBagItem extends Item {
             SoundHelper.playAtPlayer(player, new SoundProfile(SoundEventRegistry.CHEAP_MONEY_BAG).setVolume(0.1F));
         }
 
-        return super.use(world, player, hand);
+        return TypedActionResult.success(stack);
     }
 
     private void giveCoins(World world, PlayerEntity player) {

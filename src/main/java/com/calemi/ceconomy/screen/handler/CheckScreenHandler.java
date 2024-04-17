@@ -16,10 +16,10 @@ public class CheckScreenHandler extends BaseScreenHandler {
         this(syncId, playerInv, data.readBoolean(), data.readItemStack());
     }
 
-    public CheckScreenHandler(int syncId, PlayerInventory playerInv, boolean isMainHand, ItemStack walletStack) {
+    public CheckScreenHandler(int syncId, PlayerInventory playerInv, boolean isMainHand, ItemStack checkStack) {
         super(ScreenHandlerTypeRegistry.CHECK, syncId);
         this.isMainHand = isMainHand;
-        this.checkStack = walletStack;
+        this.checkStack = checkStack;
         addPlayerInventory(playerInv, 69);
     }
 

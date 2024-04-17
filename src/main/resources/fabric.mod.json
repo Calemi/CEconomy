@@ -1,48 +1,49 @@
 {
-	"schemaVersion": 1,
-	"id": "ceconomy",
-	"version": "${version}",
-	"name": "CEconomy",
-	"description": "Adds a fully-functioning economy! Currency, Shops, Wallets, Banks, and more!",
-	"authors": [
-		"Calemi"
+  "schemaVersion": 1,
+  "id": "ceconomy",
+  "version": "${version}",
+  "name": "CEconomy",
+  "description": "Adds a fully-functioning economy! Currency, Shops, Wallets, Banks, and more!",
+  "authors": [
+	"Calemi"
+  ],
+  "contact": {
+	"homepage": "https://www.curseforge.com/minecraft/mc-mods/ceconomy",
+	"sources": "https://github.com/Calemi/CEconomy"
+  },
+  "license": "CC0-1.0",
+  "icon": "assets/ceconomy/icon.png",
+  "environment": "*",
+  "entrypoints": {
+	"main": [
+	  "com.calemi.ceconomy.main.CEconomyMain"
 	],
-	"contact": {
-		"homepage": "https://www.curseforge.com/minecraft/mc-mods/calemis-economy"
-	},
-	"license": "CC0-1.0",
-	"icon": "assets/ceconomy/icon.png",
-	"environment": "*",
-	"entrypoints": {
-		"main": [
-		  "com.calemi.ceconomy.main.CEconomyMain"
-		],
-	  	"client": [
-		  "com.calemi.ceconomy.main.CEconomyClient"
-	  	],
-		"fabric-datagen": [
-		  "com.calemi.ceconomy.datagen.DataGen"
-		],
-	  	"modmenu": [
-		  "com.calemi.ceconomy.config.CEconomyConfigMenu"
-	  	],
-	  	"jade": [
-		  "com.calemi.ceconomy.compat.jade.JadePlugin"
-	  	]
-	},
-	"mixins": [
-		"ceconomy.mixins.json"
+	"client": [
+	  "com.calemi.ceconomy.main.CEconomyClient"
 	],
-	"depends": {
-		"fabricloader": ">=0.15.9",
-		"minecraft": "~1.20.1",
-		"java": ">=17",
-		"fabric-api": "*",
-	  	"ccore": ">=1.0.2"
-	},
-	"suggests": {
-		"ftbteams": "*",
-	  	"jade": "*",
-	  	"trinkets": "*"
-	}
+	"fabric-datagen": [
+	  "com.calemi.ceconomy.datagen.DataGen"
+	],
+	"modmenu": [
+	  "com.calemi.ceconomy.config.CEconomyConfigMenu"
+	],
+	"jade": [
+	  "com.calemi.ceconomy.compat.jade.JadePlugin"
+	]
+  },
+  "mixins": [
+	"ceconomy.mixins.json"
+  ],
+  "depends": {
+	"fabricloader": ">=0.15.9",
+	"minecraft": "~1.20.1",
+	"java": ">=17",
+	"fabric-api": "*",
+	"ccore": ">=1.0.3",
+	"trinkets": "*"
+  },
+  "suggests": {
+	"ftbteams": "*",
+	"jade": "*"
+  }
 }

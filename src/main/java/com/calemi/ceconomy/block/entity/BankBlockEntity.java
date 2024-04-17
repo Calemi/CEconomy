@@ -6,7 +6,6 @@ import com.calemi.ceconomy.api.currency.inventory.ICurrencyInventoryBlock;
 import com.calemi.ceconomy.api.currency.inventory.ICurrencyInventoryItem;
 import com.calemi.ceconomy.api.currency.inventory.ItemCurrencyInventory;
 import com.calemi.ceconomy.api.currency.network.ICurrencyNetworkBank;
-import com.calemi.ceconomy.api.item.IPlaceInBankItem;
 import com.calemi.ceconomy.api.item.IPlaceInCurrencyContainer;
 import com.calemi.ceconomy.api.item.ValuableItem;
 import com.calemi.ceconomy.api.item.ValuableItemHelper;
@@ -33,7 +32,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-public class BankBlockEntity extends CurrencyNetworkBlockEntity implements ICurrencyNetworkBank, ICurrencyInventoryBlock, ExtendedScreenHandlerFactory, BankInventory {
+public class BankBlockEntity extends CurrencyNetworkBlockEntity implements ICurrencyNetworkBank, ICurrencyInventoryBlock, BankInventory {
 
     private final BlockCurrencyInventory currencyInventory = new BlockCurrencyInventory(CEconomyConfig.COMMON.bankCurrencyCapacity);
 
@@ -112,21 +111,7 @@ public class BankBlockEntity extends CurrencyNetworkBlockEntity implements ICurr
         return inventory;
     }
 
-    @Override
-    public void writeScreenOpeningData(ServerPlayerEntity player, PacketByteBuf buf) {
-        buf.writeBlockPos(this.pos);
-    }
 
-    @Override
-    public Text getDisplayName() {
-        return world.getBlockState(pos).getBlock().getName();
-    }
-
-    @Nullable
-    @Override
-    public ScreenHandler createMenu(int syncId, PlayerInventory playerInventory, PlayerEntity player) {
-        return new BankScreenHandler(syncId, playerInventory, this);
-    }
 
     @Override
     public BlockCurrencyInventory getCurrencyInventory() {

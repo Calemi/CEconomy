@@ -2,11 +2,14 @@ package com.calemi.ceconomy.registry;
 
 import com.calemi.ceconomy.api.item.ValuableItem;
 import com.calemi.ceconomy.main.CEconomyMain;
+import com.calemi.ceconomy.packet.ValuableItemsPacket;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import net.fabricmc.fabric.api.resource.SimpleSynchronousResourceReloadListener;
 import net.minecraft.resource.ResourceManager;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.dedicated.MinecraftDedicatedServer;
 import net.minecraft.util.Identifier;
 
 import java.io.BufferedReader;
@@ -19,10 +22,14 @@ public class ValuableItemReloadListener implements SimpleSynchronousResourceRelo
 
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().serializeNulls().disableHtmlEscaping().create();
 
-    private static final ArrayList<ValuableItem> valuableItemMap = new ArrayList<>();
+    private static ArrayList<ValuableItem> valuableItems = new ArrayList<>();
 
     public static ArrayList<ValuableItem> getValuableItems() {
-        return valuableItemMap;
+        return valuableItems;
+    }
+
+    public static void setValuableItems(ArrayList<ValuableItem> list) {
+        valuableItems = list;
     }
 
     @Override
@@ -35,7 +42,7 @@ public class ValuableItemReloadListener implements SimpleSynchronousResourceRelo
 
         CEconomyMain.LOGGER.info("Collecting Valuable Item Data...");
 
-        valuableItemMap.clear();
+        valuableItems.clear();
 
         TypeToken<ArrayList<ValuableItem>> typeToken = new TypeToken<>(){};
 
@@ -44,7 +51,7 @@ public class ValuableItemReloadListener implements SimpleSynchronousResourceRelo
             try (InputStream stream = manager.getResource(id).get().getInputStream()) {
 
                 BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
-                valuableItemMap.addAll(GSON.fromJson(reader, typeToken.getType()));
+                valuableItems.addAll(GSON.fromJson(reader, typeToken.getType()));
             }
 
             catch(Exception e) {
@@ -52,8 +59,8 @@ public class ValuableItemReloadListener implements SimpleSynchronousResourceRelo
             }
         }
 
-        Collections.sort(valuableItemMap);
+        Collections.sort(valuableItems);
 
-        CEconomyMain.LOGGER.info("Valuable Items : " + valuableItemMap);
+        CEconomyMain.LOGGER.info("Valuable Items : " + valuableItems);
     }
 }

@@ -19,11 +19,11 @@ import net.minecraft.world.World;
 
 public class WalletDepositItemPacket {
 
-    public static void send(ItemStack outputStack, int count) {
+    public static void send(int outputItemIndex, int count) {
 
         PacketByteBuf buf = PacketByteBufs.create();
 
-        buf.writeItemStack(outputStack);
+        buf.writeInt(outputItemIndex);
         buf.writeInt(count);
 
         ClientPlayNetworking.send(PacketRegistry.WALLET_DEPOSIT_ITEM, buf);
@@ -33,14 +33,23 @@ public class WalletDepositItemPacket {
 
         World world = player.getWorld();
 
-        ItemStack stack = buf.readItemStack();
+        int index = buf.readInt();
         int count = buf.readInt();
 
-        stack.setCount(count);
+        if (index < 0 || index >= ValuableItemHelper.getWalletOutputItemList().size()) {
+            return;
+        }
 
-        ValuableItem itemValue = ValuableItemHelper.getItemValue(stack.getItem());
+        ValuableItem itemValue = ValuableItemHelper.getWalletOutputItemList().get(index);
 
-        if (itemValue != null && itemValue.getValue() > 0) {
+        if (!itemValue.canWalletDeposit()) {
+            return;
+        }
+
+        ItemStack stack = new ItemStack(itemValue.getItem(), count);
+        long cost = itemValue.getValue() * count;
+
+        if (itemValue.getValue() > 0) {
 
             ItemStack walletStack = CurrencyHelper.getCurrentWallet(player);
 
@@ -48,12 +57,12 @@ public class WalletDepositItemPacket {
 
                 ItemCurrencyInventory walletCurrencyInv = walletItem.getCurrencyInventory(walletStack);
 
-                if (walletCurrencyInv.canWithdrawCurrency(itemValue.getValue() * count)) {
+                if (walletCurrencyInv.canWithdrawCurrency(cost)) {
 
                     if (InventoryHelper.canInsertItem(player.getInventory(), stack, count)) {
 
                         InventoryHelper.insertItem(player.getInventory(), stack, count);
-                        walletCurrencyInv.withdrawCurrency(itemValue.getValue() * count);
+                        walletCurrencyInv.withdrawCurrency(cost);
                     }
                 }
             }

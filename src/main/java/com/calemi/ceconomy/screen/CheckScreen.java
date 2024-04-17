@@ -10,6 +10,7 @@ import com.calemi.ceconomy.api.currency.CurrencyHelper;
 import com.calemi.ceconomy.config.CEconomyConfig;
 import com.calemi.ceconomy.item.CheckItem;
 import com.calemi.ceconomy.item.WalletItem;
+import com.calemi.ceconomy.main.CEconomyMain;
 import com.calemi.ceconomy.main.CEconomyRef;
 import com.calemi.ceconomy.packet.CheckWritePacket;
 import com.calemi.ceconomy.screen.handler.CheckScreenHandler;
@@ -57,6 +58,10 @@ public class CheckScreen extends BaseScreen<CheckScreenHandler> {
     @Override
     protected void drawForeground(DrawContext context, int mouseX, int mouseY) {
         super.drawForeground(context, mouseX, mouseY);
+
+        if (checkStack.isEmpty()) {
+            CEconomyMain.LOGGER.info("STACK EMPTY");
+        }
 
         btnWrite.setTooltip(Tooltip.of(Text.translatable("text.ceconomy.write_check")));
 

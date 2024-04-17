@@ -5,13 +5,14 @@ import com.calemi.ceconomy.api.currency.inventory.ItemCurrencyInventory;
 import com.calemi.ceconomy.api.item.IPlaceInCurrencyContainer;
 import com.calemi.ceconomy.config.CEconomyConfig;
 import com.calemi.ceconomy.inventory.ItemStackInventory;
+import com.calemi.ceconomy.packet.ValuableItemsPacket;
+import com.calemi.ceconomy.registry.ValuableItemReloadListener;
 import com.calemi.ceconomy.screen.handler.WalletScreenHandler;
 import dev.emi.trinkets.api.TrinketItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.screen.ScreenHandler;
@@ -31,6 +32,8 @@ public class WalletItem extends TrinketItem implements ICurrencyInventoryItem, I
     public TypedActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
 
         if (world.isClient) return TypedActionResult.pass(player.getStackInHand(hand));
+
+        ValuableItemsPacket.send((ServerPlayerEntity) player, ValuableItemReloadListener.getValuableItems());
 
         ItemStack stack = player.getStackInHand(hand);
         player.openHandledScreen(new ExtendedScreenHandlerFactory() {

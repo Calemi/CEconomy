@@ -11,6 +11,7 @@ import com.calemi.ceconomy.api.item.ValuableItem;
 import com.calemi.ceconomy.api.item.ValuableItemHelper;
 import com.calemi.ceconomy.api.screen.DrawSystemHelper;
 import com.calemi.ceconomy.item.WalletItem;
+import com.calemi.ceconomy.main.CEconomyMain;
 import com.calemi.ceconomy.main.CEconomyRef;
 import com.calemi.ceconomy.packet.WalletDepositItemPacket;
 import com.calemi.ceconomy.screen.handler.WalletScreenHandler;
@@ -66,7 +67,7 @@ public class WalletScreen extends BaseScreen<WalletScreenHandler> {
             }
 
             else {
-                WalletDepositItemPacket.send(getOutputStack(), getOutputAmount());
+                WalletDepositItemPacket.send(outputItemIndex, getOutputAmount());
             }
 
         }, getScreenX() + 145, getScreenY() + 34, 0, 15, 19, CEconomyRef.GUI_TEXTURES));

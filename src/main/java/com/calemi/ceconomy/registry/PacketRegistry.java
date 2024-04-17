@@ -8,6 +8,8 @@ import net.minecraft.util.Identifier;
 
 public class PacketRegistry {
 
+    public static final Identifier VALUABLE_ITEMS = new Identifier(CEconomyRef.MOD_ID, "valuable_items");
+
     public static final Identifier WALLET_DEPOSIT_ITEM = new Identifier(CEconomyRef.MOD_ID, "wallet_deposit_item");
 
     public static final Identifier CHECK_WRITE = new Identifier(CEconomyRef.MOD_ID, "check_write");
@@ -46,6 +48,7 @@ public class PacketRegistry {
     }
 
     public static void initClient() {
+        ClientPlayNetworking.registerGlobalReceiver(VALUABLE_ITEMS, ValuableItemsPacket::receive);
         ClientPlayNetworking.registerGlobalReceiver(ENDER_BANK_SYNC, EnderBankSyncPacket::receive);
         ClientPlayNetworking.registerGlobalReceiver(TRADING_POST_SEND_ERROR_MSG, TradingPostSendErrorMessage::receive);
     }

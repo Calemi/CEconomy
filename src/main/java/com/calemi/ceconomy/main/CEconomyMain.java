@@ -3,6 +3,7 @@ package com.calemi.ceconomy.main;
 import com.calemi.ceconomy.config.CEconomyConfig;
 import com.calemi.ceconomy.event.listener.CurrencyEventListener;
 import com.calemi.ceconomy.event.listener.SecurityEventListener;
+import com.calemi.ceconomy.event.listener.ValuableItemsEventListener;
 import com.calemi.ceconomy.registry.*;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.resource.ResourceManagerHelper;
@@ -32,6 +33,7 @@ public class CEconomyMain implements ModInitializer {
 		PacketRegistry.init();
 		SecurityEventListener.init();
 		CurrencyEventListener.init();
+		ValuableItemsEventListener.init();
 
 		ResourceManagerHelper.get(ResourceType.SERVER_DATA).registerReloadListener(new ValuableItemReloadListener());
 	}

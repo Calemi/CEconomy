@@ -38,7 +38,7 @@ public class SecurityEventListener {
 
                 if (!securedBlock.getSecurityProfile().canAccess(player.getUuid())) {
 
-                    OverlayMessageHelper.displayErrorMsg(Text.translatable("error.ceconomy.security_cant_break"), player);
+                    OverlayMessageHelper.displayErrorMsg(Text.translatable("error.ceconomy.security.cant_break"), player);
 
                     return false;
                 }

@@ -1,2 +1,9 @@
+[v1.0.2]
+- Now requires CCore v1.0.3
+- Synced Valuable Items to joining clients.
+
+[v1.0.1]
+- Attempt #1 at fixing crash.
+
 [v1.0.0]
 - Initial build.

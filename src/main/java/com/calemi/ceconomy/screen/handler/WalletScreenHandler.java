@@ -20,17 +20,16 @@ public class WalletScreenHandler extends BaseScreenHandler {
     private final Inventory walletInv;
 
     public WalletScreenHandler(int syncId, PlayerInventory playerInv, PacketByteBuf data) {
-        this(syncId, playerInv, new SimpleInventory(4), data.readItemStack());
+        this(syncId, playerInv, new SimpleInventory(1), data.readItemStack());
     }
 
     public WalletScreenHandler(int syncId, PlayerInventory playerInv, Inventory walletInv, ItemStack walletStack) {
         super(ScreenHandlerTypeRegistry.WALLET, syncId);
 
         this.walletStack = walletStack;
-
         this.walletInv = walletInv;
-        addSlot(new ValuableItemSlot(walletInv, 0, 17, 35));
 
+        addSlot(new ValuableItemSlot(walletInv, 0, 17, 35));
         addPlayerInventory(playerInv, 77);
     }
 
@@ -43,13 +42,6 @@ public class WalletScreenHandler extends BaseScreenHandler {
             ItemCurrencyInventory walletCurrencyInv = walletItem.getCurrencyInventory(walletStack);
             ScreenHandlerHelper.handleDepositCurrencySlot(walletInv, 0, walletCurrencyInv);
         }
-    }
-
-    @Override
-    public void onClosed(PlayerEntity player) {
-
-
-        super.onClosed(player);
     }
 
     @Override

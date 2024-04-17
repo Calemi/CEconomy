@@ -6,6 +6,8 @@ import com.calemi.ceconomy.api.security.SecurityHelper;
 import com.calemi.ceconomy.block.entity.BankBlockEntity;
 import com.calemi.ceconomy.registry.BlockEntityTypeRegistry;
 import com.calemi.ceconomy.registry.BlockRegistry;
+import com.calemi.ceconomy.screen.handler.BankScreenHandler;
+import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.BlockWithEntity;
@@ -13,7 +15,11 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
+import net.minecraft.network.PacketByteBuf;
+import net.minecraft.screen.ScreenHandler;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
@@ -41,7 +47,24 @@ public class BankBlock extends BlockWithEntity {
 
                 if (SecurityHelper.canAccess(player, bank)) {
 
-                    player.openHandledScreen(bank);
+                    player.openHandledScreen(new ExtendedScreenHandlerFactory() {
+
+                        @Override
+                        public void writeScreenOpeningData(ServerPlayerEntity player, PacketByteBuf buf) {
+                            buf.writeBlockPos(pos);
+                        }
+
+                        @Override
+                        public Text getDisplayName() {
+                            return world.getBlockState(pos).getBlock().getName();
+                        }
+
+                        @Nullable
+                        @Override
+                        public ScreenHandler createMenu(int syncId, PlayerInventory playerInventory, PlayerEntity player) {
+                            return new BankScreenHandler(syncId, playerInventory, world.getBlockEntity(pos));
+                        }
+                    });
                 }
 
                 else OverlayMessageHelper.displayErrorMsg(Text.translatable("error.ceconomy.security.cant_access"), player);
